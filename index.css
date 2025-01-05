@@ -41,7 +41,7 @@ input[type=text], input[type=password] {
 }
 
 .container button:focus, .container button:active {
-    outline: 1px dotted #ccc; 
+    outline: none; 
     background-color: transparent; 
     color: black; 
 }
