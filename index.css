@@ -17,7 +17,7 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 2px 0;
     display: inline-block;
-    border: 1px dotted #ccc;
+    border: 4px dotted #ccc;
     box-sizing: border-box;
     border-radius: 20px;
     text-justify: left;
