@@ -31,7 +31,7 @@ input[type=text], input[type=password] {
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 12px;
-    border: none;
+    border: 1px dotted #ccc;
     box-sizing: border-box;
     margin-top: 20px;
     width: 50%;
@@ -41,7 +41,7 @@ input[type=text], input[type=password] {
 }
 
 .container button:focus, .container button:active {
-    outline: none; 
+    outline: 1px dotted #ccc; 
     background-color: transparent; 
     color: black; 
 }
