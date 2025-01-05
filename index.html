@@ -1,24 +1,43 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Audio player to loop ambient music -->
+    <audio id="background-music" autoplay loop>
+        <source src="ambient.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
-    <head>
-        <link rel="stylesheet" href="index.css" >
+    <div class="container">
+        <!-- Logo or Image -->
+        <img src="your-image.jpg" alt="Your Image">
 
-    </head>
+        <!-- Login Form -->
+        <form id="loginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
 
-    <div class = "container">
-        <form id = "loginForm">
-            <img src= "3dgifmaker44269.gif">
-
-            <input type="text" placeholder="Username" name="username" id="username"required>
-            <input type="password" placeholder="Password" name="password" id="password" required>
-
-            <button type="submit" name = "login_button" id="l-button">Login</button>
+            <!-- Volume Control Slider -->
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
         </form>
-
-        <script defer src="login.js"></script>
-
     </div>
 
+    <!-- Optional JavaScript -->
+    <script>
+        // Get the background audio element and the volume slider
+        const volumeSlider = document.getElementById('volumeSlider');
+        const backgroundMusic = document.getElementById('background-music');
+        
+        // Update audio volume when the slider value changes
+        volumeSlider.addEventListener('input', function() {
+            backgroundMusic.volume = volumeSlider.value;
+        });
+    </script>
+</body>
 </html>
