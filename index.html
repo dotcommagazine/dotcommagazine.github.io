@@ -1,68 +1,24 @@
-<!DOCTYPE html>
+
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magazine Site</title>
-    <style>
-        body {
-            background-color: #1a1a1a; /* deep grey */
-            font-family: 'SF Pro', 'Helvetica Neue', sans-serif;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-        }
-        .gif-container {
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-        .password-area {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px 30px;
-            margin-top: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            text-align: center;
-        }
-        .password-area input {
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 18px;
-            width: 100%;
-            text-align: center;
-            outline: none;
-        }
-        .password-area input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="gif-container">
-        <img src="3dgifmaker44269" alt="Animated GIF" />
+
+    <head>
+        <link rel="stylesheet" href="index.css" >
+
+    </head>
+
+    <div class = "container">
+        <form id = "loginForm">
+            <img src= "3dgifmaker44269.gif">
+
+            <input type="text" placeholder="Username" name="username" id="username"required>
+            <input type="password" placeholder="Password" name="password" id="password" required>
+
+            <button type="submit" name = "login_button" id="l-button">Login</button>
+        </form>
+
+        <script defer src="Scripts/login.js"></script>
+
     </div>
-    <div class="password-area">
-        <input type="password" placeholder="Enter Password" id="password" />
-    </div>
-    <script>
-        const correctPassword = 'JUNE1ST';
-        const passwordField = document.getElementById('password');
-        
-        passwordField.addEventListener('input', function() {
-            if (passwordField.value === correctPassword) {
-                window.location.href = "coming-soon.html"; // Redirect to next page if correct password
-            }
-        });
-    </script>
-</body>
+
 </html>
