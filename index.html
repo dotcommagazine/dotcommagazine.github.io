@@ -9,13 +9,13 @@
 
 <body>
     <!-- Hidden audio player to loop ambient music in the background -->
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" loop>
         <source src="ambient.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Play/Pause button in the top right corner -->
-    <button id="play-pause-btn" class="play-pause-btn">Pause</button>
+    <button id="play-pause-btn" class="play-pause-btn">Play</button>
 
     <div class="container">
         <form id="loginForm">
@@ -31,14 +31,16 @@
     </div>
 
     <script>
-        // Ensure audio plays only after user interaction (e.g., click on login)
+        // Ensure audio plays only after user interaction (e.g., click on login or play button)
         const audio = document.getElementById('background-music');
         const playPauseBtn = document.getElementById('play-pause-btn');
 
-        // Initially play the audio
+        // Start the audio when the user clicks anywhere on the page (login button or play button)
         window.onload = function() {
-            audio.play();
-        }
+            document.body.addEventListener('click', function() {
+                audio.play();
+            });
+        };
 
         // Toggle play/pause functionality for the audio
         playPauseBtn.addEventListener('click', function () {
