@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     background-size: cover;
     background-position: center top;
@@ -12,10 +13,17 @@ audio {
     display: none; /* Hide the audio player */
 }
 
+/* Main container for centering the form and elements */
 .container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the container takes full height */
 }
 
+/* Styling for text and password input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -28,12 +36,14 @@ input[type=text], input[type=password] {
     justify-self: center;
 }
 
+/* Styling for the gif image */
 .container img {
     padding-bottom: 10px;
     width: 300px;
     justify-self: center;
 }
 
+/* Styling for the login button */
 .container button {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -47,6 +57,7 @@ input[type=text], input[type=password] {
     color: black;
 }
 
+/* Button states (focus, active, hover) */
 .container button:focus, .container button:active {
     outline: none;
     background-color: transparent;
@@ -58,6 +69,7 @@ input[type=text], input[type=password] {
     color: white;
 }
 
+/* Login form styling */
 #loginForm {
     display: grid;
     place-content: center;
@@ -70,4 +82,25 @@ input[type=text], input[type=password] {
 #src {
     top: 200px;
     right: 50%;
+}
+
+/* Styling for the play/pause button */
+.play-pause-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for play/pause button */
+.play-pause-btn:hover {
+    background-color: black;
+    color: white;
 }
