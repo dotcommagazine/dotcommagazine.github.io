@@ -28,7 +28,7 @@ const form = document.getElementById('loginForm');
 
     if(check_login(username, password))
     {
-        window.location.href = 'Desktop/Desktop.html';
+        window.location.href = 'Desktop/index.html';
     }
 
     else
