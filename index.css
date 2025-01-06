@@ -2,15 +2,57 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: white; /* White background */
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white; /* Ensure the background is white */
+}
+
+.line {
+    position: absolute;
+    width: 1px;  /* Thin line */
+    height: 200%;  /* Twice the height of the screen */
+    background: repeating-linear-gradient(
+        to bottom,
+        #222222,   /* Dark grey color for the lines */
+        #222222 1px,  /* Start of the dot */
+        transparent 1px, /* End of the dot */
+        transparent 5px /* Gap between dots */
+    );
+    animation: moveLines 10s linear infinite;
+}
+
+/* Move the lines in random directions */
+@keyframes moveLines {
+    0% {
+        transform: translate(0, 0);  /* Start from the initial position */
+    }
+    25% {
+        transform: translate(50%, -50%);  /* Move diagonally to top-right */
+    }
+    50% {
+        transform: translate(100%, 100%);  /* Move diagonally to bottom-right */
+    }
+    75% {
+        transform: translate(-50%, -50%);  /* Move diagonally to top-left */
+    }
+    100% {
+        transform: translate(0, 100%);  /* Move to bottom-left */
+    }
+}
+
+/* Styles for the login form */
 .container {
     display: grid;
     place-content: center;
     height: 100vh;
     position: relative;
+    z-index: 2; /* Make sure the form appears above the background */
 }
 
 input[type=text], input[type=password] {
@@ -72,32 +114,4 @@ input[type=text]:focus, input[type=password]:focus {
     justify-items: center;
     position: relative;
     z-index: 2;
-}
-
-/* Moving Dotted Lines Background */
-#background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: transparent;
-}
-
-.line {
-    position: absolute;
-    width: 1px; /* Thin lines */
-    height: 400%; /* Make the lines 4x longer */
-    background: black; /* Black lines */
-    animation: moveLines 10s linear infinite;
-    border-left: 1px dotted black; /* Dotted line effect */
-}
-
-@keyframes moveLines {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(100%);
-    }
 }
