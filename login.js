@@ -1,22 +1,11 @@
-// Line creation function
-function createLines() {
-    const linesContainer = document.createElement('div');
-    linesContainer.id = 'background'; // Set ID for the background container
-    document.body.appendChild(linesContainer);
-
-    for (let i = 0; i < 100; i++) {
-        const line = document.createElement('div');
-        line.classList.add('line'); // Add the line class to each line
-        linesContainer.appendChild(line);
-
-        // Set each line's initial position
-        line.style.left = Math.random() * window.innerWidth + 'px';
-        line.style.top = Math.random() * window.innerHeight + 'px';
+// Login check function
+function check_login(username, password) {
+    if (username == "ylan" && password == "JUNE1ST") {
+        return true;
+    } else {
+        return false;
     }
 }
-
-// Create lines on page load
-window.addEventListener('load', createLines);
 
 // Handle form submission and login
 const form = document.getElementById('loginForm');
