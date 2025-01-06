@@ -24,7 +24,7 @@ function createLines() {
     }
 }
 
-// Stagger the lines by a small delay
+// Create lines after the page is loaded
 window.addEventListener('load', () => {
     createLines(); // Create the lines after the page is loaded
 });
