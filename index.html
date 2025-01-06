@@ -1,27 +1,21 @@
 <html lang="en">
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="background"></div> <!-- Background container for the moving lines -->
 
-<head>
-    <link rel="stylesheet" href="index.css">
-</head>
+        <div class="container">
+            <form id="loginForm">
+                <img src="3dgifmaker44269.gif" alt="Login Logo">
 
-<body>
+                <input type="text" placeholder="Username" name="username" id="username" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
 
-    <!-- Background for dotted lines -->
-    <div id="background"></div>
-
-    <div class="container">
-        <form id="loginForm">
-            <img src="3dgifmaker44269.gif">
-
-            <input type="text" placeholder="Username" name="username" id="username" required>
-            <input type="password" placeholder="Password" name="password" id="password" required>
-
-            <button type="submit" name="login_button" id="l-button">Login</button>
-        </form>
+                <button type="submit" name="login_button" id="l-button">Login</button>
+            </form>
+        </div>
 
         <script defer src="login.js"></script>
-    </div>
-
-</body>
-
+    </body>
 </html>
