@@ -56,6 +56,14 @@ body {
     }
 }
 
+/* Responsive Design: Ensure lines fill the screen properly */
+@media (max-width: 768px) {
+    .line {
+        height: 300%; /* Adjust for smaller screens */
+        width: 2px; /* Make lines a little wider on smaller screens */
+    }
+}
+
 .container {
     position: relative;
     z-index: 1;
