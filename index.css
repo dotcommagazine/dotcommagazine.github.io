@@ -10,6 +10,7 @@ body {
     display: grid;
     place-content: center;
     height: 100vh;
+    position: relative; /* Ensure the container content stays on top */
 }
 
 input[type=text], input[type=password] {
@@ -86,7 +87,7 @@ input[type=text]:focus, input[type=password]:focus {
 .line {
     position: absolute;
     width: 1px; /* Thin lines */
-    height: 100%;
+    height: 400%; /* Make the lines 4x longer */
     background: black; /* Black lines */
     animation: moveLines 10s linear infinite;
     border-left: 1px dotted black; /* Dotted line effect */
