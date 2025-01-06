@@ -15,8 +15,14 @@ body {
 .line {
     position: absolute;
     width: 1px;  /* Thin line */
-    height: 100%;  /* Full height of the screen */
-    background-color: #39ff14;  /* Solid neon green color */
+    height: 200%;  /* Twice the height of the screen */
+    background: repeating-linear-gradient(
+        to bottom,
+        #39ff14,   /* Neon green */
+        #39ff14 1px,  /* Start of the dot */
+        transparent 1px, /* End of the dot */
+        transparent 5px /* Gap between dots */
+    );
     animation: moveLines 10s linear infinite;
 }
 
