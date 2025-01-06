@@ -12,6 +12,9 @@ const background = document.getElementById('background');
 const linesCount = 200; // More lines to fill the page
 
 function createLines() {
+    // Clear existing lines before creating new ones
+    background.innerHTML = '';
+
     for (let i = 0; i < linesCount; i++) {
         const line = document.createElement('div');
         line.classList.add('line');
