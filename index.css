@@ -17,7 +17,7 @@ body {
 
 .line {
     position: absolute;
-    width: 1px;
+    width: 1px; /* Default thickness */
     height: 400%; /* Lines are four times longer */
     background: repeating-linear-gradient(
         to bottom,
@@ -57,14 +57,15 @@ body {
     }
 }
 
-/* Responsive Design: Ensure lines fill the screen properly */
+/* Make lines thicker and more visible on mobile devices */
 @media (max-width: 768px) {
     .line {
-        height: 300%; /* Adjust for smaller screens */
-        width: 2px; /* Make lines a little wider on smaller screens */
+        height: 400%; /* Keep the lines long */
+        width: 3px; /* Thicker lines on mobile */
     }
 }
 
+/* General styling for the login form and buttons */
 .container {
     position: relative;
     z-index: 1;
