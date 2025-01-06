@@ -1,83 +1,36 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white; /* White background */
+    background-size: cover;
+    background-position: center top;
+    background-image: url("background7.png");
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: white; /* Ensure the background is white */
-    z-index: 0; /* Place the background behind the content */
-}
-
-.line {
-    position: absolute;
-    width: 1px;  /* Thin line */
-    height: 400%;  /* Make lines 4x longer */
-    background: repeating-linear-gradient(
-        to bottom,
-        #222222,   /* Dark grey color for the lines */
-        #222222 1px,  /* Start of the dot */
-        transparent 1px, /* End of the dot */
-        transparent 5px /* Gap between dots */
-    );
-    animation: moveLines 10s linear infinite;
-    z-index: -1; /* Ensure lines are behind the login form */
-}
-
-/* Move the lines in random directions */
-@keyframes moveLines {
-    0% {
-        transform: translate(0, 0);  /* Start from the initial position */
-    }
-    25% {
-        transform: translate(50%, -50%);  /* Move diagonally to top-right */
-    }
-    50% {
-        transform: translate(100%, 100%);  /* Move diagonally to bottom-right */
-    }
-    75% {
-        transform: translate(-50%, -50%);  /* Move diagonally to top-left */
-    }
-    100% {
-        transform: translate(0, 100%);  /* Move to bottom-left */
-    }
-}
-
-/* Style for the login container */
-.container {
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    justify-items: center;
-    z-index: 1; /* Ensure the container is above the background lines */
-}
+.container {}
 
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 2px 0;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid black; /* Optional: add a border for better visibility */
     box-sizing: border-box;
     border-radius: 20px;
-    background-color: white; /* White background for the input boxes */
+    background-color: transparent !important; /* Force transparency */
     color: black; /* Black text */
     text-justify: left;
+    justify-self: center;
     outline: none; /* Remove default focus outline */
 }
 
 input[type=text]:focus, input[type=password]:focus {
-    border: 1px solid black;
-    outline: none;
+    outline: none; /* Remove focus outline */
+    border: 1px solid black; /* Optional: Keep border visible on focus */
 }
 
 .container img {
     padding-bottom: 10px;
     width: 300px;
+    justify-self: center;
 }
 
 .container button {
@@ -88,9 +41,10 @@ input[type=text]:focus, input[type=password]:focus {
     box-sizing: border-box;
     margin-top: 20px;
     width: 50%;
-    background-color: transparent;
-    color: black;
-    border: 1px solid black;
+    justify-self: center;
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text */
+    border: 1px solid black; /* Optional: add a border for visibility */
 }
 
 .container button:focus, .container button:active {
@@ -104,11 +58,16 @@ input[type=text]:focus, input[type=password]:focus {
     color: white;
 }
 
-/* Make sure the form is centered */
 #loginForm {
     display: grid;
     place-content: center;
     padding: 16px;
+    height: 100%;
     justify-self: center;
     justify-items: center;
+}
+
+#src {
+    top: 200px;
+    right: 50%;
 }
