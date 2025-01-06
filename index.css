@@ -2,29 +2,14 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: white; /* White background */
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensure body takes full height of viewport */
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#loginForm {
     display: grid;
     place-content: center;
-    padding: 16px;
-    width: 100%;
-    max-width: 400px; /* Limit width of the form */
-    text-align: center; /* Ensure the text inside form is centered */
+    height: 100vh;
 }
 
 input[type=text], input[type=password] {
@@ -35,8 +20,10 @@ input[type=text], input[type=password] {
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 20px;
-    background-color: white !important;
-    color: black;
+    background-color: white; /* White background for inputs */
+    color: black; /* Black text */
+    text-justify: left;
+    justify-self: center;
     outline: none;
 }
 
@@ -59,9 +46,15 @@ input[type=text]:focus, input[type=password]:focus {
     box-sizing: border-box;
     margin-top: 20px;
     width: 50%;
+    justify-self: center;
     background-color: transparent;
     color: black;
-    border: 1px solid black;
+}
+
+.container button:focus, .container button:active {
+    outline: none;
+    background-color: transparent;
+    color: black;
 }
 
 .container button:hover {
@@ -69,39 +62,41 @@ input[type=text]:focus, input[type=password]:focus {
     color: white;
 }
 
-#src {
-    top: 200px;
-    right: 50%;
-}
-
-/* Dotted lines background */
-body {
+#loginForm {
+    display: grid;
+    place-content: center;
+    padding: 16px;
+    height: 100%;
+    justify-self: center;
+    justify-items: center;
     position: relative;
+    z-index: 2; /* Ensure the form is on top of the lines */
 }
 
+/* Moving Dotted Lines Background */
 #background {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: white;
-    z-index: -1; /* Ensures background is behind the content */
+    top: 0;
+    left: 0;
+    background: transparent; /* Make background transparent */
 }
 
 .line {
     position: absolute;
-    width: 2px; /* Original line thickness */
+    width: 1px; /* Thin lines */
     height: 100%;
-    background: #333; /* Slightly grey-black for the lines */
-    animation: moveLines 15s linear infinite;
-    border-style: dotted;
-    border-width: 2px; /* Original line size */
+    background: black; /* Black lines */
+    animation: moveLines 10s linear infinite;
+    border-left: 1px dotted black; /* Dotted line effect */
 }
 
 @keyframes moveLines {
     from {
-        transform: translateY(-100%) translateX(-50%);
+        transform: translateY(-100%);
     }
     to {
-        transform: translateY(100%) translateX(50%);
+        transform: translateY(100%);
     }
 }
