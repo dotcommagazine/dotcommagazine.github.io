@@ -1,3 +1,4 @@
+// Check login function
 function check_login(username, password) {
     if (username == "ylan" && password == "JUNE1ST") {
         return true;
@@ -6,30 +7,26 @@ function check_login(username, password) {
     }
 }
 
-function cipher_text(password) {
-    // Your cipher function, if needed in the future
-}
-
-// Create the moving dotted lines in the background
-const background = document.createElement('div');
-background.id = 'background'; // Set an ID for the background container
-document.body.appendChild(background); // Append the background to the body
-
-const linesCount = 200; // Increase the number of lines to fill the page
+// Function to create lines on the login page
+const background = document.getElementById('background');
+const linesCount = 200; // More lines to fill the page
 
 function createLines() {
     for (let i = 0; i < linesCount; i++) {
         const line = document.createElement('div');
         line.classList.add('line');
-        line.style.left = `${Math.random() * 100}%`;
-        line.style.animationDuration = `${10 + Math.random() * 10}s`;
+        line.style.left = `${Math.random() * 100}%`; // Random horizontal position
+        line.style.animationDuration = `${10 + Math.random() * 10}s`; // Random animation duration
         background.appendChild(line);
     }
 }
 
-createLines(); // Call the function to generate lines
+// Stagger the lines by a small delay
+window.addEventListener('load', () => {
+    createLines(); // Create the lines after the page is loaded
+});
 
-
+// Login form submission handler
 const form = document.getElementById('loginForm');
 
 form.addEventListener('submit', (event) => {
@@ -39,8 +36,8 @@ form.addEventListener('submit', (event) => {
     let password = document.getElementById('password').value;
 
     if (check_login(username, password)) {
-        window.location.href = 'Desktop/index.html';
+        window.location.href = 'Desktop/index.html'; // Redirect to Desktop page on successful login
     } else {
-        alert('incorrect login');
+        alert('Incorrect login');
     }
 });
