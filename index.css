@@ -15,10 +15,16 @@ input[type=text], input[type=password] {
     border: 1px solid black; /* Optional: add a border for better visibility */
     box-sizing: border-box;
     border-radius: 20px;
-    background-color: transparent; /* Transparent background */
+    background-color: transparent !important; /* Force transparency */
     color: black; /* Black text */
     text-justify: left;
     justify-self: center;
+    outline: none; /* Remove default focus outline */
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none; /* Remove focus outline */
+    border: 1px solid black; /* Optional: Keep border visible on focus */
 }
 
 .container img {
