@@ -79,7 +79,7 @@ input[type=text], input[type=password] {
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 20px;
-    background-color: transparent !important;
+    background-color: white !important; /* White background */
     color: black;
     outline: none;
 }
