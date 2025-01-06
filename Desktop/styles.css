@@ -14,18 +14,37 @@ body {
 
 .line {
     position: absolute;
-    width: 2px;
+    width: 1px; /* For a dotted effect */
     height: 100%;
-    background: #39ff14; /* Neon green */
-    animation: moveLines 10s linear infinite;
+    background: linear-gradient(to bottom, transparent 50%, #39ff14 50%); /* Creates a dotted line */
+    animation: moveLines 10s linear infinite, changeDirection 10s linear infinite;
 }
 
+/* Move the lines in random directions */
 @keyframes moveLines {
-    from {
-        transform: translateY(-100%);
+    0% {
+        transform: translate(0, 0);
     }
-    to {
-        transform: translateY(100%);
+    25% {
+        transform: translate(50%, 50%);
+    }
+    50% {
+        transform: translate(100%, 100%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
 
+/* Change direction every time lines leave the screen */
+@keyframes changeDirection {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(100%, 100%) rotate(360deg); /* Lines rotate randomly */
+    }
+}
