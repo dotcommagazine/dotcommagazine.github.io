@@ -1,17 +1,3 @@
-// Login check function
-function check_login(username, password) {
-    if (username == "ylan" && password == "JUNE1ST") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-// Cipher function (currently unused)
-function cipher_text(password) {
-    // You can add encryption logic here if needed
-}
-
 // Line creation function
 function createLines() {
     const linesContainer = document.createElement('div');
@@ -28,17 +14,6 @@ function createLines() {
         line.style.top = Math.random() * window.innerHeight + 'px';
     }
 }
-
-// Function to move lines on scroll (scroll wheel interactivity)
-let scrollSpeed = 0;
-
-window.addEventListener('wheel', (e) => {
-    scrollSpeed += e.deltaY * 0.03;
-    document.querySelectorAll('.line').forEach((line) => {
-        let moveAmount = (Math.random() - 0.5) * scrollSpeed; // Random movement based on scroll
-        line.style.transform = `translate(${moveAmount}px, ${scrollSpeed}px)`;
-    });
-});
 
 // Create lines on page load
 window.addEventListener('load', createLines);
