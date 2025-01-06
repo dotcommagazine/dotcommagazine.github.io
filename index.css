@@ -89,12 +89,12 @@ body {
 
 .line {
     position: absolute;
-    width: 1px; /* Thinner lines */
+    width: 2px; /* Original line thickness */
     height: 100%;
     background: #333; /* Slightly grey-black for the lines */
     animation: moveLines 15s linear infinite;
     border-style: dotted;
-    border-width: 1px;
+    border-width: 2px; /* Original line size */
 }
 
 @keyframes moveLines {
