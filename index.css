@@ -5,18 +5,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    
-}
+.container {}
 
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 2px 0;
     display: inline-block;
-    border: none;
+    border: 1px solid black; /* Optional: add a border for better visibility */
     box-sizing: border-box;
     border-radius: 20px;
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text */
     text-justify: left;
     justify-self: center;
 }
@@ -36,14 +36,15 @@ input[type=text], input[type=password] {
     margin-top: 20px;
     width: 50%;
     justify-self: center;
-    background-color: transparent; 
-    color: black; 
+    background-color: transparent; /* Transparent background */
+    color: black; /* Black text */
+    border: 1px solid black; /* Optional: add a border for visibility */
 }
 
 .container button:focus, .container button:active {
-    outline: none; 
-    background-color: transparent; 
-    color: black; 
+    outline: none;
+    background-color: transparent;
+    color: black;
 }
 
 .container button:hover {
