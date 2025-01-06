@@ -1,5 +1,6 @@
 const background = document.getElementById('background');
 const linesCount = 50;
+let scrollFactor = 1;  // Variable to store the scroll speed
 
 function createLines() {
     for (let i = 0; i < linesCount; i++) {
@@ -13,13 +14,19 @@ function createLines() {
 }
 
 function updateLinesSpeed(e) {
-    const speedFactor = Math.min(e.clientY / window.innerHeight, 0.3);  // Slightly affects speed
+    // Adjust the speed of the lines based on the scroll wheel
+    if (e.deltaY > 0) {
+        scrollFactor = Math.min(scrollFactor + 0.1, 2); // Increase speed
+    } else {
+        scrollFactor = Math.max(scrollFactor - 0.1, 0.5); // Decrease speed
+    }
+
     document.querySelectorAll('.line').forEach(line => {
-        line.style.animationDuration = `${4 + (1 - speedFactor) * 6}s`;  // Slight mouse effect on speed
+        line.style.animationDuration = `${5 / scrollFactor + Math.random() * 5}s`;  // Speed adjusted by scroll
     });
 }
 
-window.addEventListener('mousemove', updateLinesSpeed);
+window.addEventListener('wheel', updateLinesSpeed);  // Use scroll wheel for interactivity
 window.addEventListener('resize', () => {
     background.innerHTML = '';
     createLines();
