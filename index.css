@@ -10,6 +10,7 @@ body {
     width: 100%;
     height: 100%;
     background: white; /* Ensure the background is white */
+    z-index: 0; /* Place the background behind the content */
 }
 
 .line {
@@ -24,6 +25,7 @@ body {
         transparent 5px /* Gap between dots */
     );
     animation: moveLines 10s linear infinite;
+    z-index: -1; /* Ensure lines are behind the login form */
 }
 
 /* Move the lines in random directions */
@@ -51,6 +53,7 @@ body {
     place-content: center;
     height: 100vh;
     justify-items: center;
+    z-index: 1; /* Ensure the container is above the background lines */
 }
 
 input[type=text], input[type=password] {
